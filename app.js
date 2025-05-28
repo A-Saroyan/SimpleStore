@@ -1,7 +1,7 @@
 const express = require('express')
 const validations = require('./utils/vallidations')
 const settings = require('./utils/config')
-const utils = require('./utils/utils')
+const fileOperations = require('./utils/fileOperations')
 const JWT = require('./utils/jwt')
 const bcrypt = require('bcrypt')
 
@@ -25,7 +25,7 @@ app.post("/auth/register",validations.validateUserRegister,async (req,res)=> {
     
         req.body.password = await bcrypt.hash(req.body.password,settings.SaltRound)        
         req.body.role = 'user',
-        utils.writeData('data/users.json',req.body)        
+        fileOperations.writeData('data/users.json',req.body)        
         res.status(201).json({message: "You are registered successfully !!!"});
         } 
 

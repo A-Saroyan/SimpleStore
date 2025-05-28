@@ -24,6 +24,7 @@ const CreateToken = async function (req,res,next)
 
 const Decode = function (token) {
 
+     
     jwt.verify(token,settings.SECRET);
 
 }

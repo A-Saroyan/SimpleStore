@@ -1,4 +1,4 @@
-const utils = require('./utils')
+const fileOperations = require('./fileOperations')
 const bcrypt = require('bcrypt')
 const settings = require('./config')
 
@@ -31,7 +31,7 @@ const  validateUserRegister =  async function (req,res,next)
         return;
     }
 
-   let users =  await utils.readData("data/users.json"); 
+   let users =  await fileOperations.readData("data/users.json"); 
    
     
    if(users.find((user)=> user.email === req.body.email))
@@ -47,7 +47,7 @@ const  validateUserRegister =  async function (req,res,next)
 
 const checkUserExist = async function (req,res,next)
 {
-    let users =  await utils.readData("data/users.json"); 
+    let users =  await fileOperations.readData("data/users.json"); 
     let hashedPassword = await bcrypt.hash(req.body.password,settings.SaltRound)
 
 
