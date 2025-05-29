@@ -22,7 +22,7 @@ const writeData = async (filename,data) => {
     let users = await readData(filename);
     users.push(data);
 
-   await fs.writeFile (filePath,JSON.stringify(users,null,2),(err,data)=> {
+    await fs.writeFile (filePath,JSON.stringify(users,null,2),(err,data)=> {
         if(err)
         {
             throw new Error ('Something went wrong(writeData) !!!')

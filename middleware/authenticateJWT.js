@@ -13,22 +13,18 @@ const extractJWT = async function (req,res,next)
         return;
     } 
 
-    
     const decodedData = await jwt.verify(token,settings.SECRET);
 
-    let users =  await fileOperations.readData("data/users.json"); 
+    let users = await fileOperations.readData("data/users.json"); 
     req.body  = decodedData;
 
     if(users.find((user)=> user.username === req.body.username) && users.find((user)=> bcrypt.compare(user.password,req.body.password)))
-        {
-            next();
-        }
-
-    else
     {
-        res.status(400).send({message: "JWT token is invalid !!!"});
-        return;
-    }  
+        next();
+    }
+
+     
+    res.status(400).send({message: "JWT token is invalid !!!"}); 
     
 }
 

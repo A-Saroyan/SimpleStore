@@ -52,9 +52,9 @@ const checkUserExist = async function (req,res,next)
 
 
     if(users.find((user)=> user.username === req.body.username) && users.find((user)=> bcrypt.compare(user.password,hashedPassword)))
-        {
+    {
             next();
-        }
+    }
 
     else
     {

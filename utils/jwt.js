@@ -4,6 +4,13 @@ const bcrypt = require('bcrypt')
 
 const CreateToken = async function (req,res,next)
 {
+
+    if(!req.body.password)
+    {
+        return res.status(400).json({ error: 'Password is required' });
+    }
+
+
     let hashedPassword = await bcrypt.hash(req.body.password,settings.SaltRound)
 
     const payload = {
