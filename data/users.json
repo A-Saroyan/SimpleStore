@@ -1,19 +1,26 @@
 [
   {
-    "name": "Ando",
-    "age": "24",
-    "email": "devHack@mail.com",
-    "username": "Ando_05",
-    "password": "$2b$10$wDls1a0xyQ7HHu.MX03w3ODvpDIwdN/OeznQcEc7HlaR3dOgUoQfK",
-    "role": "user"
-  },
-  {
     "name": "Hacker",
     "age": "99",
     "email": "hack@mail.com",
     "username": "overthink",
     "password": "$2b$10$Tm2wBl.o3KNgt80oZdOur.CtZviez6MTBSNvnVCJiLq4UwLciuTJe",
     "role": "user"
-  } 
-  
+  },
+  {
+    "name": "hakob",
+    "age": "24",
+    "email": "devHasdaaasdck@mail.com",
+    "username": "Ando_05",
+    "password": "$2b$10$7a19.EJA6.MVU3V6RV0GO.HlqekmiDHbAdaHXrOF1IN2GSjfSQDz6",
+    "role": "user"
+  },
+  {
+    "name": "Hacker",
+    "age": "99",
+    "email": "hacsdsdk@mail.com",
+    "username": "hacker",
+    "password": "$2b$10$2cFlUdTiTOYMRzxCWktPjuDR3o7Rk6ynw.D5g1QLPO5vC6eqj1sDS",
+    "role": "user"
+  }
 ]

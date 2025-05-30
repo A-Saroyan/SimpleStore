@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt')
 const CreateToken = async function (req,res,next)
 {
 
-    if(!req.body.password)
+    if(!req.body.password)  
     {
         return res.status(400).json({ error: 'Password is required' });
     }
@@ -23,6 +23,8 @@ const CreateToken = async function (req,res,next)
     
     res.setHeader('Authorization', `Bearer ${token}`);
     res.status(200).json({ message: 'Logged in successfully' });
+
+    next();
 
 }
 

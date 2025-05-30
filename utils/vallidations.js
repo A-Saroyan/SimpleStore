@@ -47,20 +47,32 @@ const  validateUserRegister =  async function (req,res,next)
 
 const checkUserExist = async function (req,res,next)
 {
-    let users =  await fileOperations.readData("data/users.json"); 
-    let hashedPassword = await bcrypt.hash(req.body.password,settings.SaltRound)
+    const { username, password } = req.body;
 
-
-    if(users.find((user)=> user.username === req.body.username) && users.find((user)=> bcrypt.compare(user.password,hashedPassword)))
+    if(!password)  
     {
-            next();
+        return res.status(400).json({ error: 'Password is required!!!' });
     }
 
-    else
+    if(!username)  
     {
-        res.status(400).send({message: "Wrong username or password !!!"});
-        return;
-    }  
+        return res.status(400).json({ error: 'Username is required!!!' });
+    }
+
+    const users = await fileOperations.readData('./data/users.json');
+    const user = users.find(u => u.username === username);
+
+    if (!user) {
+      return res.status(400).json({ message: 'Wrong username or password !!!' });
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.status(400).json({ message: 'Wrong username or password !!!' });
+    }
+
+    next();
     
 }
 
