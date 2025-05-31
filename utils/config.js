@@ -6,7 +6,8 @@ const settings = {
     PORT: process.env.PORT,
     SECRET: process.env.secret_key,
     SaltRound: Number(process.env.SaltRound),
-    ValidAge:process.env.ValidAge
+    ValidAge:Number(process.env.ValidAge),
+    superUser:process.env.superUser
 
 };
 

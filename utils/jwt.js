@@ -10,13 +10,14 @@ const CreateToken = async function (req,res,next)
         return res.status(400).json({ error: 'Password is required' });
     }
 
+    
 
     let hashedPassword = await bcrypt.hash(req.body.password,settings.SaltRound)
 
     const payload = {
         username: req.body.username,
         password: hashedPassword,
-        role: 'user'
+        user: req.body.role
     }
 
     const token = jwt.sign(payload, settings.SECRET, { expiresIn: '1h'});
@@ -33,8 +34,18 @@ const CreateToken = async function (req,res,next)
 
 const Decode = function (token) {
 
+      
+    try 
+    {
+        let decoded_token = jwt.verify(token,settings.SECRET);
+        return decoded_token;
+    }
      
-    jwt.verify(token,settings.SECRET);
+    catch(err)
+    {
+        console.error('Token is invalid');
+        return null;
+    }
 
 }
 
