@@ -7,13 +7,21 @@ const { body, validationResult } = require('express-validator');
 const validateUserRegister = [
     body('name')
       .notEmpty().withMessage('Name is required'),
-  
+    body('username')
+    .notEmpty().withMessage('Email is required')
+    .custom(async (value) => {
+        const users = await fileOperations.readData('data/users.json');
+        if (users.some(user => user.username === value )) {
+          throw new Error('This username is already in use');
+        }
+        return true;
+      }),
     body('email')
       .notEmpty().withMessage('Email is required')
       .isEmail().withMessage('Email is not valid')
       .custom(async (value) => {
         const users = await fileOperations.readData('data/users.json');
-        if (users.some(user => user.email === value)) {
+        if (users.some(user => user.email === value )) {
           throw new Error('This email is already in use');
         }
         return true;
