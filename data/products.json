@@ -33,12 +33,5 @@
     "price": 14.99,
     "category": "Home & Office",
     "inStock": true
-  },
-  {
-    "id": 6,
-    "name": "Speaker",
-    "price": 279.99,
-    "category": "Electronics",
-    "inStock": true
-  }
+  } 
 ]

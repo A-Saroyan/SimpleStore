@@ -1,12 +1,4 @@
-[
-  {
-    "name": "Hacker",
-    "age": "99",
-    "email": "hack@mail.com",
-    "username": "overthink",
-    "password": "$2b$10$Tm2wBl.o3KNgt80oZdOur.CtZviez6MTBSNvnVCJiLq4UwLciuTJe",
-    "role": "user"
-  },
+[  
   {
     "name": "admin",
     "age": "99",
@@ -21,14 +13,6 @@
     "email": "h44ack@mail.com",
     "username": "user",
     "password": "$2b$10$Zc05IpEOOjrO1ScMu61rvupx640O0YzB/dVxqfH3I0irmdbCnaoVe",
-    "role": "admin"
-  },
-  {
-    "name": "Dave",
-    "age": "22",
-    "email": "hacaak11@mail.com",
-    "username": "Dave",
-    "password": "$2b$10$ICXZeWs.tx4VnbFOBCsHq.h8IRFpnsjVqL2imHblENb5J0vtHKY7q",
     "role": "user"
   }
 ]
