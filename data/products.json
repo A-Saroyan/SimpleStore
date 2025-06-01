@@ -1,37 +1,44 @@
 [
-    {
-      "id": 1,
-      "name": "Wireless Mouse",
-      "price": 19.99,
-      "category": "Electronics",
-      "inStock": true
-    },
-    {
-      "id": 2,
-      "name": "Bluetooth Speaker",
-      "price": 29.99,
-      "category": "Electronics",
-      "inStock": true
-    },
-    {
-      "id": 3,
-      "name": "Coffee Mug",
-      "price": 9.99,
-      "category": "Home & Kitchen",
-      "inStock": false
-    },
-        {
-        "id": 4,
-        "name": "Notebook",
-        "price": 4.99,
-        "category": "Stationery",
-        "inStock": true
-        },
-    {
-      "id": 5,
-      "name": "Desk Lamp",
-      "price": 14.99,
-      "category": "Home & Office",
-      "inStock": true
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Wireless Mouse",
+    "price": 19.99,
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "name": "Bluetooth Speaker",
+    "price": 29.99,
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "id": 3,
+    "name": "Coffee Mug",
+    "price": 9.99,
+    "category": "Home & Kitchen",
+    "inStock": false
+  },
+  {
+    "id": 4,
+    "name": "Notebook",
+    "price": 4.99,
+    "category": "Stationery",
+    "inStock": true
+  },
+  {
+    "id": 5,
+    "name": "Desk Lamp",
+    "price": 14.99,
+    "category": "Home & Office",
+    "inStock": true
+  },
+  {
+    "id": 6,
+    "name": "Speaker",
+    "price": 279.99,
+    "category": "Electronics",
+    "inStock": true
+  }
+]

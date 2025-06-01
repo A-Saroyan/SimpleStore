@@ -7,7 +7,9 @@ const fileOperations = require('../utils/fileOperations')
 const express = require('express');
 const authRouter = express.Router();
 
-authRouter.post("/login",validations.checkUserExist,JWT.CreateToken,  (req,res)=> {
+authRouter.post("/login",validations.checkUserExist,JWT.CreateToken,(req,res)=> {
+
+    res.status(200).json({ message: 'Logged in successfully' });
 
 })
 

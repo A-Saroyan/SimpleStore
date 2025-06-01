@@ -13,6 +13,22 @@
     "email": "hack11@mail.com",
     "username": "admin",
     "password": "$2b$10$uUDJ0k2u8yNM1TJmW7q.oetrccuCyz4KJ3R.RrEjPHhaWqocH6MtG",
+    "role": "devAdmin"
+  },
+  {
+    "name": "user",
+    "age": "99",
+    "email": "h44ack@mail.com",
+    "username": "user",
+    "password": "$2b$10$Zc05IpEOOjrO1ScMu61rvupx640O0YzB/dVxqfH3I0irmdbCnaoVe",
     "role": "admin"
+  },
+  {
+    "name": "Dave",
+    "age": "22",
+    "email": "hacaak11@mail.com",
+    "username": "Dave",
+    "password": "$2b$10$ICXZeWs.tx4VnbFOBCsHq.h8IRFpnsjVqL2imHblENb5J0vtHKY7q",
+    "role": "user"
   }
 ]

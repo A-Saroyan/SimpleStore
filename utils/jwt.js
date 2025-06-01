@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken')
 const settings =  require('./config')
 const bcrypt = require('bcrypt')
+const fileOperations = require('./fileOperations')
 
 const CreateToken = async function (req,res,next)
 {
@@ -10,31 +11,26 @@ const CreateToken = async function (req,res,next)
         return res.status(400).json({ error: 'Password is required' });
     }
 
-    
+    let hashedPassword = await bcrypt.hash(req.body.password,settings.SaltRound);
+    let users =  await fileOperations.readData("data/users.json"); 
 
-    let hashedPassword = await bcrypt.hash(req.body.password,settings.SaltRound)
+    let user  =  users.find((user)=> user.username === req.body.username);
 
     const payload = {
         username: req.body.username,
         password: hashedPassword,
-        user: req.body.role
+        role: user.role
     }
 
     const token = jwt.sign(payload, settings.SECRET, { expiresIn: '1h'});
-    
     res.setHeader('Authorization', `Bearer ${token}`);
-    res.status(200).json({ message: 'Logged in successfully' });
 
     next();
-
 }
 
 
-
-
-const Decode = function (token) {
-
-      
+const Decode = function (token) 
+{   
     try 
     {
         let decoded_token = jwt.verify(token,settings.SECRET);
@@ -46,10 +42,6 @@ const Decode = function (token) {
         console.error('Token is invalid');
         return null;
     }
-
 }
-
-//console.log(Decode);
-
 
 module.exports = {CreateToken,Decode}
