@@ -3,6 +3,9 @@ const settings = require('./utils/config')
 const authRouter = require('./routes/auth');
 const productsRouter = require('./routes/products')
 const usersRouter = require('./routes/users')
+const connection  = require('./database/connection_async')
+
+ 
 
 const app = express();
 app.use(express.json());

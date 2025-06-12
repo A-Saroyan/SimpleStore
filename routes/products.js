@@ -6,12 +6,14 @@ const fileOperations = require('../utils/fileOperations')
 const authenticateJWT = require('../middleware/authenticateJWT');
 const authorizeRole = require('../middleware/authorizeRole')
 
-
 const express = require('express');
 const productsRouter = express.Router();
 
 productsRouter.get('/',async(req,res)=> {
     
+
+   
+
     let products = await fileOperations.readData('data/products.json');
     res.status(200).json(products);
 
